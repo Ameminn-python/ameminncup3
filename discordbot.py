@@ -9,7 +9,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 @bot.event
 async def on_ready():
     activity = discord.Activity(name='みんなの配信', type=discord.ActivityType.watching)
-    await client.change_presence(activity=activity)
+    await bot.change_presence(activity=activity)
 
 
 @bot.event
