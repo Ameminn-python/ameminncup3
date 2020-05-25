@@ -5,6 +5,11 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+@bot.event
+async def on_ready():
+    activity = discord.Activity(name='みんなの配信', type=discord.ActivityType.watching)
+    await client.change_presence(activity=activity)
+
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -14,8 +19,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+async def check_stream(ctx):
+    await ctx.send('Checking stream')
 
 
 bot.run(token)
