@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 async def on_member_join(member):
     chid = 714384240426614786
     ch = bot.get_channel(chid)
-    embed = discord.embed(title=str(member.display_name)+'あめみん杯にようこそ！',description='あめみんが役職付与するまで待ってね',colour=discord.colour.blue())
+    embed = discord.Embed(title=str(member.display_name)+'あめみん杯にようこそ！',description='あめみんが役職付与するまで待ってね',colour=discord.colour.blue())
     embed.add_field(name='あめみん杯の詳細',value='[twitter](https://twitter.com/ameminn_/status/1264833889417064454?s=20)',inline=False)
     await ch.send(embed=embed)
 
